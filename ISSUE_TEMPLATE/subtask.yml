@@ -2,7 +2,7 @@ name: Sub-task
 description: Create a broken-down actionable step under a parent item.
 title: "[Sub-task]: "
 labels: ["needs-triage"]
-type: sub-task
+type: Sub-task
 body:
   - type: markdown
     attributes:

@@ -2,7 +2,7 @@ name: Epic
 description: Create a large body of work that spans multiple stories or tasks.
 title: "[Epic]: "
 labels: ["needs-triage"]
-type: epic
+type: Epic
 body:
   - type: markdown
     attributes:

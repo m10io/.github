@@ -2,7 +2,7 @@ name: Story
 description: Create a user-centric feature or outcome.
 title: "[Story]: "
 labels: ["needs-triage"]
-type: story
+type: Story
 body:
   - type: markdown
     attributes:

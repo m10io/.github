@@ -2,7 +2,7 @@ name: Task
 description: Create a concrete work item for implementation, operations, architecture, or documentation.
 title: "[Task]: "
 labels: ["needs-triage"]
-type: task
+type: Task
 body:
   - type: markdown
     attributes:
