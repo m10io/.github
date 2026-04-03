@@ -1,0 +1,90 @@
+name: Bug
+description: Report a defect, regression, or unexpected behavior.
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+type: bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use a **Bug** for defects, regressions, and incorrect behavior.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Bug summary
+      description: Describe the problem.
+      placeholder: What is broken?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: What should have happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide a minimal repro path.
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Critical
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: App version, branch, OS, browser, region, or deployment.
+      placeholder: e.g. production, v1.4.2, macOS, Chrome 124
+
+  - type: dropdown
+    id: regression
+    attributes:
+      label: Regression?
+      options:
+        - "Yes"
+        - "No"
+        - Unknown
+    validations:
+      required: true
+
+  - type: input
+    id: related-parent
+    attributes:
+      label: Related Story, Task, or parent item
+      description: Link the parent or related work item if known.
+      placeholder: e.g. org/repo#123
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs, screenshots, or additional evidence
+      description: Paste logs or links, or attach screenshots after the issue is created.

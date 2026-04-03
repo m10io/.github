@@ -1,0 +1,104 @@
+name: Epic
+description: Create a large body of work that spans multiple stories or tasks.
+title: "[Epic]: "
+labels: ["needs-triage"]
+type: epic
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use an **Epic** for a large initiative, capability, or outcome area that will be delivered through multiple Stories and/or Tasks.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Epic summary
+      description: What is this Epic about?
+      placeholder: One concise paragraph describing the initiative.
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Business problem or opportunity
+      description: Why does this matter?
+      placeholder: Describe the problem, opportunity, or strategic driver.
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: What should be true when this Epic is complete?
+      placeholder: Describe the target end state.
+    validations:
+      required: true
+
+  - type: textarea
+    id: success-metrics
+    attributes:
+      label: Success metrics
+      description: How will success be measured?
+      placeholder: e.g. reduced cycle time, improved reliability, adoption target, revenue impact
+    validations:
+      required: true
+
+  - type: textarea
+    id: in-scope
+    attributes:
+      label: In scope
+      description: What is included in this Epic?
+      placeholder: Bullet list of included capabilities or deliverables.
+    validations:
+      required: true
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: What is explicitly not included?
+      placeholder: Bullet list of exclusions.
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: What other work, decisions, or teams does this depend on?
+      placeholder: Link related issues, repos, or external milestones.
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks and assumptions
+      description: Capture known risks, unknowns, and assumptions.
+      placeholder: Bullet list of key risks and assumptions.
+
+  - type: input
+    id: owning-team
+    attributes:
+      label: Owning team
+      description: Which team owns delivery of this Epic?
+      placeholder: e.g. Platform, Payments, Frontend
+    validations:
+      required: true
+
+  - type: input
+    id: target-quarter
+    attributes:
+      label: Target quarter
+      description: Which quarter is this Epic targeting?
+      placeholder: e.g. 2026-Q2
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Epic checklist
+      options:
+        - label: The value and outcome are clear.
+          required: true
+        - label: Scope boundaries are clear enough to begin planning.
+          required: true
+        - label: Dependencies and major risks have been identified.
+          required: true

@@ -1,0 +1,74 @@
+name: Task
+description: Create a concrete work item for implementation, operations, architecture, or documentation.
+title: "[Task]: "
+labels: ["needs-triage"]
+type: task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use a **Task** for concrete work that is not primarily framed as a user story.
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What needs to be done?
+      placeholder: Describe the concrete work item.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why is this task needed?
+      placeholder: Explain the technical, operational, or business context.
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: What must be true for this Task to be considered complete?
+      placeholder: |
+        - Code merged
+        - Tests added/updated
+        - Docs updated
+    validations:
+      required: true
+
+  - type: input
+    id: parent
+    attributes:
+      label: Parent Story or Epic
+      description: Link the parent item when applicable.
+      placeholder: e.g. org/repo#123
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: What is this blocked by or coordinated with?
+      placeholder: Link related issues or external dependencies.
+
+  - type: input
+    id: owning-team
+    attributes:
+      label: Owning team
+      description: Which team owns delivery?
+      placeholder: e.g. Platform, Payments, Frontend
+    validations:
+      required: true
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Estimated effort
+      options:
+        - XS
+        - S
+        - M
+        - L
+        - XL
+    validations:
+      required: true

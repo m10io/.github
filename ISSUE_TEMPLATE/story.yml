@@ -1,0 +1,94 @@
+name: Story
+description: Create a user-centric feature or outcome.
+title: "[Story]: "
+labels: ["needs-triage"]
+type: story
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use a **Story** for a user-centric slice of value.
+
+        Preferred format:
+        **As a** ...
+        **I want** ...
+        **So that** ...
+
+  - type: textarea
+    id: story-statement
+    attributes:
+      label: User story
+      description: Write the story in user-centric form.
+      placeholder: As a ..., I want ..., so that ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: Context
+      description: What background does the team need?
+      placeholder: Explain relevant product, technical, or business context.
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: What conditions must be satisfied for this Story to be complete?
+      placeholder: |
+        - Given ... when ... then ...
+        - Given ... when ... then ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: What must happen first, or what other work is related?
+      placeholder: Link related issues, epics, repos, or external dependencies.
+
+  - type: input
+    id: parent-epic
+    attributes:
+      label: Parent Epic
+      description: Link or reference the Epic this Story belongs to.
+      placeholder: e.g. org/repo#123
+    validations:
+      required: true
+
+  - type: dropdown
+    id: value-type
+    attributes:
+      label: Value type
+      description: What kind of value does this Story primarily deliver?
+      options:
+        - Customer value
+        - Internal efficiency
+        - Compliance / control
+        - Reliability / resilience
+        - Enablement / foundation
+    validations:
+      required: true
+
+  - type: input
+    id: owning-team
+    attributes:
+      label: Owning team
+      description: Which team owns delivery?
+      placeholder: e.g. Platform, Payments, Frontend
+    validations:
+      required: true
+
+  - type: dropdown
+    id: effort
+    attributes:
+      label: Estimated effort
+      options:
+        - XS
+        - S
+        - M
+        - L
+        - XL
+    validations:
+      required: true

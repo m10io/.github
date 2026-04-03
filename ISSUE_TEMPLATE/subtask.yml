@@ -1,0 +1,50 @@
+name: Sub-task
+description: Create a broken-down actionable step under a parent item.
+title: "[Sub-task]: "
+labels: ["needs-triage"]
+type: sub-task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use a **Sub-task** for a small actionable step that belongs under a Story, Task, or Bug.
+
+  - type: input
+    id: parent
+    attributes:
+      label: Parent item
+      description: Link the Story, Task, or Bug this Sub-task belongs to.
+      placeholder: e.g. org/repo#123
+    validations:
+      required: true
+
+  - type: textarea
+    id: action
+    attributes:
+      label: Concrete action
+      description: What exactly needs to be done?
+      placeholder: Describe the specific unit of work.
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Done criteria
+      description: How will you know this Sub-task is complete?
+      placeholder: Bullet list of completion criteria.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies or sequencing notes
+      description: Note any prerequisite work or ordering constraints.
+
+  - type: input
+    id: owner
+    attributes:
+      label: Owning team or assignee
+      description: Who should own this step?
+      placeholder: e.g. Platform, @username
