@@ -1,5 +1,1 @@
 blank_issues_enabled: false
-contact_links:
-  - name: Agile intake question
-    url: https://github.com/m10io/.github/discussions
-    about: Use Discussions for process questions, support requests, or work that is not yet ready to become an issue.
