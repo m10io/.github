@@ -1,6 +1,11 @@
 name: Sync Issue Templates
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'ISSUE_TEMPLATE/**'
   workflow_dispatch:
     inputs:
       repos:
@@ -25,7 +30,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          IFS=',' read -ra REPOS <<< "${{ inputs.repos }}"
+          IFS=',' read -ra REPOS <<< "${{ inputs.repos || 'block-explorer-fe,mono' }}"
 
           for REPO in "${REPOS[@]}"; do
             REPO="${REPO// /}"
