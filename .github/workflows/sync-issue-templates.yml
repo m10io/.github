@@ -1,0 +1,53 @@
+name: Sync Issue Templates
+
+on:
+  workflow_dispatch:
+    inputs:
+      repos:
+        description: 'Repos to sync (comma-separated, e.g. block-explorer-fe,api-server)'
+        required: true
+        type: string
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout .github repo
+        uses: actions/checkout@v4
+        with:
+          path: source
+
+      - name: Sync templates
+        env:
+          GH_TOKEN: ${{ secrets.TEMPLATE_SYNC_TOKEN }}
+          ORG: m10io
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          IFS=',' read -ra REPOS <<< "${{ inputs.repos }}"
+
+          for REPO in "${REPOS[@]}"; do
+            REPO="${REPO// /}"
+            echo "::group::$REPO"
+
+            git clone "https://x-access-token:${GH_TOKEN}@github.com/${ORG}/${REPO}.git" "target"
+
+            mkdir -p "target/.github/ISSUE_TEMPLATE"
+            cp -r source/ISSUE_TEMPLATE/. "target/.github/ISSUE_TEMPLATE/"
+
+            cd target
+            git add .github/ISSUE_TEMPLATE/
+
+            if git diff --cached --quiet; then
+              echo "No changes — skipping $REPO"
+            else
+              git commit -m "chore: sync issue templates from m10io/.github"
+              git push
+              echo "Synced to $REPO"
+            fi
+
+            cd ..
+            rm -rf target
+            echo "::endgroup::"
+          done
