@@ -30,7 +30,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          IFS=',' read -ra REPOS <<< "${{ inputs.repos || 'block-explorer-fe,mono' }}"
+          IFS=',' read -ra REPOS <<< "${{ inputs.repos || 'block-explorer-fe,mono,verification-service,fx-demo-app' }}"
 
           for REPO in "${REPOS[@]}"; do
             REPO="${REPO// /}"
