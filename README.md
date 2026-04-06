@@ -1,5 +1,3 @@
-# ISSUES_README
-
 This repository uses a shared issue workflow based on **GitHub Issues** and a **master GitHub Project** (.github).
 
 The goal is to make work easy to understand across teams and repositories, while still keeping day-to-day execution close to the code.
