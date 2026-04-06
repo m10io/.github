@@ -82,7 +82,7 @@ body:
       description: Which team owns delivery of this Epic?
       placeholder: e.g. Platform, Payments, Frontend
     validations:
-      required: true
+      required: false
 
   - type: input
     id: target-quarter

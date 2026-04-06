@@ -58,7 +58,7 @@ body:
       description: Which team owns delivery?
       placeholder: e.g. Platform, Payments, Frontend
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: effort
