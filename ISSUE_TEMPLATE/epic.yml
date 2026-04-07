@@ -52,7 +52,7 @@ body:
       description: What is included in this Epic?
       placeholder: Bullet list of included capabilities or deliverables.
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: out-of-scope
@@ -97,8 +97,8 @@ body:
       label: Epic checklist
       options:
         - label: The value and outcome are clear.
-          required: true
+          required: false
         - label: Scope boundaries are clear enough to begin planning.
-          required: true
+          required: false
         - label: Dependencies and major risks have been identified.
-          required: true
+          required: false
